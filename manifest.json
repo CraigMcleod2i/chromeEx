@@ -1,0 +1,28 @@
+{
+    "name": "CRAIG'S EXTENSION!",
+    "version": "1.0.0",
+    "description": "yeah yeah",
+    "manifest_version": 3,
+    "author": "Craig McLeod",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "color grabber!"
+    },
+    "permissions": [
+        "activeTab",
+        "declarativeContent",
+        "tabs",
+        "storage"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+       { 
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+            ],
+       "js": ["script.js"]}
+    ]
+}
