@@ -1,6 +1,6 @@
 (() => {
-  // misnomer - just copies css value to clipboard
-  const copycolour = (e) => {
+  // copies css value to clipboard
+  const copycssvalue = (e) => {
     navigator.clipboard.writeText(e.target.textContent.split(": ")[1]);
     alert("Value copied to clipboard \n" + e.target.textContent.split(": ")[1]);
   };
@@ -68,7 +68,7 @@
         // set style and add event listeners to all
         [colorElem, fontElem, backgroundColorElem].forEach((x) => {
           x.style.cssText = `background-color:${current.backgroundColor};color:${current.color};width: 90%;margin:0.1rem;border-radius:0.3rem;cursor:pointer;font-size:0.75em !important;font-family:${current.fontFamily}`;
-          x.addEventListener("click", copycolour);
+          x.addEventListener("click", copycssvalue);
           x.addEventListener("mouseenter", hoverBehaviour);
           x.addEventListener("mouseleave", undoHoverBehaviour);
         });
